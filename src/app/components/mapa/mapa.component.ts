@@ -159,7 +159,7 @@ export class MapaComponent  implements OnInit {
 
     const markerPosition = new google.maps.Marker({
       position: this.mapa.getCenter(),
-      title: "David",
+      title: "gabo",
     });
 
     markerPosition.setMap(this.mapa);

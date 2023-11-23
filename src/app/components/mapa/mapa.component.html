@@ -1,30 +1,46 @@
-<h1>Tu ubicación</h1>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Datos de ubicación</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-<div class="formulario">
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-back-button></ion-back-button>
+    <ion-toolbar>
+      <ion-title>¡Brindanos tu ubicación!</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="container"><br><br>
+
     <form [formGroup]="formMapas" (ngSubmit)="onSubmit()">
-  
+      <ion-item>
       <input type="text" #inputPlaces id="inputPlaces" formControlName="busqueda">
-  
-      <div class="form panel">
+    </ion-item>
   
         <div>
           <img class="sb-title-icon" src="https://fonts.gstatic.com/s/i/googlematerialicons/location_pin/v5/24px.svg"
             alt="">
         </div>
+        <ion-item>
+        <input type="text" #inputPlaces placeholder="Direccion" formControlName="direccion" />
+      </ion-item>
+      <ion-item>
+        <input type="text" #inputPlaces placeholder="Edificio, departamento, piso (opcional)" formControlName="referencia" />
+      </ion-item>
+      <ion-item>
+        <input type="text" #inputPlaces placeholder="Ciudad" class="ciudad" formControlName="ciudad" />
+      </ion-item>
+      <ion-item>
+        <input type="text" #inputPlaces placeholder="Provincia" formControlName="provincia" />
+      </ion-item>
+      <ion-item>
+        <input type="text" #inputPlaces placeholder="Region" formControlName="region" />
+      </ion-item>
   
-        <input type="text" placeholder="Direccion" formControlName="direccion" />
-        <input type="text" placeholder="Edificio, departamento, piso (opcional)" formControlName="referencia" />
-        <input type="text" placeholder="Ciudad" class="ciudad" formControlName="ciudad" />
-        <input type="text" placeholder="Provincia" formControlName="provincia" />
-        <div class="half-input-container">
-          <input type="text" class="half-input" placeholder="Region" formControlName="region" />
-        </div>
+        <ion-button class="button-cta" type="submit" [routerLink]="['/no']">Guardar</ion-button>
   
-        <button class="button-cta" type="submit">Guardar</button>
-  
-      </div>
-
       <div class="mapa" #divMap></div>
-      
     </form>
   </div>
+</ion-content>
